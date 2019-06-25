@@ -29,6 +29,7 @@
         <module>yangpan-spring-boot-global-exception</module>
         <module>yangpan-spring-boot-properties</module>
         <module>yangpan-spring-boot-jdbc-templates</module>
+        <module>yangpan-spring-boot-data-jpa</module>
     </modules>
 
 
