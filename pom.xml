@@ -30,7 +30,9 @@
         <module>yangpan-spring-boot-properties</module>
         <module>yangpan-spring-boot-jdbc-templates</module>
         <module>yangpan-spring-boot-data-jpa</module>
+        <module>yangpan-spring-boot-druid</module>
         <module>yangpan-spring-boot-bean</module>
+        <module>yangpan-spring-boot-xml</module>
     </modules>
 
 
