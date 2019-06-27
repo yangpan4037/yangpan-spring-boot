@@ -33,6 +33,7 @@
         <module>yangpan-spring-boot-druid</module>
         <module>yangpan-spring-boot-bean</module>
         <module>yangpan-spring-boot-xml</module>
+        <module>yangpan-spring-boot-environment-aware</module>
     </modules>
 
 
