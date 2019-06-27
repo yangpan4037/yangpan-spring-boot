@@ -10,6 +10,8 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <packaging>pom</packaging>
+
     <groupId>site.yangpan</groupId>
     <artifactId>yangpan-spring-boot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -34,6 +36,7 @@
         <module>yangpan-spring-boot-bean</module>
         <module>yangpan-spring-boot-xml</module>
         <module>yangpan-spring-boot-environment-aware</module>
+        <module>yangpan-spring-boot-runner</module>
     </modules>
 
 
