@@ -37,6 +37,7 @@
         <module>yangpan-spring-boot-xml</module>
         <module>yangpan-spring-boot-environment-aware</module>
         <module>yangpan-spring-boot-runner</module>
+        <module>yangpan-spring-boot-scheduled</module>
     </modules>
 
 
