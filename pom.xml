@@ -40,6 +40,7 @@
         <module>yangpan-spring-boot-scheduled</module>
         <module>yangpan-spring-boot-filter</module>
         <module>yangpan-spring-boot-interceptor</module>
+        <module>yangpan-spring-boot-listener</module>
     </modules>
 
 
