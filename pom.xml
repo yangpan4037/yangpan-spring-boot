@@ -41,6 +41,7 @@
         <module>yangpan-spring-boot-filter</module>
         <module>yangpan-spring-boot-interceptor</module>
         <module>yangpan-spring-boot-listener</module>
+        <module>yangpan-spring-boot-async</module>
     </modules>
 
 
