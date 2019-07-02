@@ -42,6 +42,7 @@
         <module>yangpan-spring-boot-interceptor</module>
         <module>yangpan-spring-boot-listener</module>
         <module>yangpan-spring-boot-async</module>
+        <module>yangpan-spring-boot-rest-template</module>
     </modules>
 
 
