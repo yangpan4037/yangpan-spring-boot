@@ -43,6 +43,7 @@
         <module>yangpan-spring-boot-listener</module>
         <module>yangpan-spring-boot-async</module>
         <module>yangpan-spring-boot-rest-template</module>
+        <module>yangpan-srping-boot-mail</module>
     </modules>
 
 
