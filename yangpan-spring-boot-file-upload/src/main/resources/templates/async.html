@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <h3>异步单个上传：</h3>
+    <table>
+        <tr>
+            <td>选择文件：</td>
+            <td><input id="fileContent" type="file"/></td>
+        </tr>
+        <tr>
+            <td>上传结果：</td>
+            <td id="ajaxUploadResult">暂无！</td>
+        </tr>
+        <tr>
+            <td>操作按钮：</td>
+            <td><input id="submitBtn" type="button" value="开始上传"/></td>
+        </tr>
+    </table>
+</div>
+<div>
+    <h3>异步多个上传：</h3>
+    <table>
+        <tr>
+            <td>选择文件：</td>
+            <td><input id="fileContentTwo" type="file" multiple/></td>
+        </tr>
+        <tr>
+            <td>上传结果：</td>
+            <td id="ajaxUploadResultTwo">暂无！</td>
+        </tr>
+        <tr>
+            <td>操作按钮：</td>
+            <td><input id="submitBtnTwo" type="button" value="开始上传"/></td>
+        </tr>
+    </table>
+</div>
+<script>
+    //异步单个上传
+    $("#submitBtn").click(function () {
+        var formData = new FormData();
+        formData.append("file", document.getElementById("fileContent").files[0]);
+        $.ajax({
+            url: "/async/upload",
+            type: "POST",
+            data: formData,
+            dataType: "json",
+            contentType: false,//必须false才会自动加上正确的Content-Type
+            processData: false,//必须false才会避开jQuery对 formdata 的默认处理,XMLHttpRequest会对 formdata 进行正确的处理
+            success: function (result) {
+                console.log(result)
+                $("#ajaxUploadResult").html(JSON.stringify(result));
+            },
+            error: function (msg) {
+                alert("发生异常！" + msg);
+            }
+        });
+    });
+
+    //异步多个上传
+    $("#submitBtnTwo").click(function () {
+        var formData = new FormData();
+        var files = document.getElementById("fileContentTwo").files;
+        for(i=0;i<files.length;i++){
+            formData.append("files", files[i]);
+        }
+        $.ajax({
+            url: "/async/multiUpload",
+            type: "POST",
+            data: formData,
+            dataType: "json",
+            contentType: false,//必须false才会自动加上正确的Content-Type
+            processData: false,//必须false才会避开jQuery对 formdata 的默认处理,XMLHttpRequest会对 formdata 进行正确的处理
+            success: function (result) {
+                console.log(result)
+                $("#ajaxUploadResultTwo").html(JSON.stringify(result));
+            },
+            error: function (msg) {
+                alert("发生异常！" + msg);
+            }
+        });
+    });
+</script>
+</body>
+</html>

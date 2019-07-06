@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单上传</title>
+</head>
+<body>
+<h3>表单单个上传：</h3>
+<form method="POST" enctype="multipart/form-data" action="/form/upload" target="formUploadResultIframe">
+    <table>
+        <tr>
+            <td>选择文件：</td>
+            <td><input type="file" name="file"/></td>
+        </tr>
+        <tr>
+            <td>上传结果：</td>
+            <td id="formUploadResult"><iframe width="1000" height="35" frameborder="no" border="0" scrolling="no" allowtransparency="yes" name="formUploadResultIframe"></iframe></td>
+        </tr>
+        <tr>
+            <td>操作按钮：</td>
+            <td><input id="formUploadBtn" type="submit" value="开始上传"/></td>
+        </tr>
+    </table>
+</form>
+
+
+<h3>表单多个上传：</h3>
+<form method="POST" enctype="multipart/form-data" action="/form/multiUpload" target="formUploadResultIframe2">
+    <table>
+        <tr>
+            <td>选择文件：</td>
+            <td><input type="file" name="files" multiple/></td>
+        </tr>
+        <tr>
+            <td>上传结果：</td>
+            <td><iframe width="1000" height="35" frameborder="no" border="0" scrolling="no" allowtransparency="yes" name="formUploadResultIframe2"></iframe></td>
+        </tr>
+        <tr>
+            <td>操作按钮：</td>
+            <td><input type="submit" value="开始上传"/></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

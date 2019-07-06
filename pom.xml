@@ -45,6 +45,7 @@
         <module>yangpan-spring-boot-rest-template</module>
         <module>yangpan-srping-boot-mail</module>
         <module>yangpan-spring-boot-cache</module>
+        <module>yangpan-spring-boot-file-upload</module>
     </modules>
 
 
