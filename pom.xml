@@ -46,6 +46,8 @@
         <module>yangpan-srping-boot-mail</module>
         <module>yangpan-spring-boot-cache</module>
         <module>yangpan-spring-boot-file-upload</module>
+        <module>yangpan-spring-boot-file-download</module>
+        <module>yang</module>
     </modules>
 
 
