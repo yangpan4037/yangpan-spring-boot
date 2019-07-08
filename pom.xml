@@ -48,6 +48,7 @@
         <module>yangpan-spring-boot-file-upload</module>
         <module>yangpan-spring-boot-file-download</module>
         <module>yangpan-spring-boot-logback</module>
+        <module>yangpan-spring-boot-transactional</module>
     </modules>
 
 
