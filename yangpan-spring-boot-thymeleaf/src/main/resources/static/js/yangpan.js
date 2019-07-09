@@ -1,0 +1,1 @@
+console.log("thymeleaf引入js文件成功。。")

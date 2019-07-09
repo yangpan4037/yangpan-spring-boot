@@ -49,6 +49,7 @@
         <module>yangpan-spring-boot-file-download</module>
         <module>yangpan-spring-boot-logback</module>
         <module>yangpan-spring-boot-transactional</module>
+        <module>yangpan-spring-boot-thymeleaf</module>
     </modules>
 
 
