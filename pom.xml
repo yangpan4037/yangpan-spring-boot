@@ -50,6 +50,7 @@
         <module>yangpan-spring-boot-logback</module>
         <module>yangpan-spring-boot-transactional</module>
         <module>yangpan-spring-boot-thymeleaf</module>
+        <module>yangpan-spring-boot-freemarker</module>
     </modules>
 
 
