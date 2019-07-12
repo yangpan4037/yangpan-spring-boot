@@ -52,6 +52,7 @@
         <module>yangpan-spring-boot-thymeleaf</module>
         <module>yangpan-spring-boot-freemarker</module>
         <module>yangpan-spring-boot-mybatis</module>
+        <module>yangpan-spring-boot-mybatis-pagehelper</module>
     </modules>
 
 
