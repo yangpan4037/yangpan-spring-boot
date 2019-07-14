@@ -54,6 +54,8 @@
         <module>yangpan-spring-boot-mybatis</module>
         <module>yangpan-spring-boot-mybatis-pagehelper</module>
         <module>yangpan-spring-boot-mybatis-generator</module>
+        <module>yangpan-spring-boot-mybatis-mapperhelper</module>
+        <module>yangpan-spring-boot-redis</module>
     </modules>
 
 
