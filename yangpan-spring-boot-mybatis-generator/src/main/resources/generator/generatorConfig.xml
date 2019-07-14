@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <!--导入属性配置-->
+    <properties resource="application.properties"></properties>
+
+    <!-- 指定数据库驱动的jdbc驱动jar包的位置 -->
+    <classPathEntry location="${mybatis.generator.driver.location}" />
+
+    <!--context是逆向工程的主要配置信息-->
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <!--jdbc的数据库连接-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="${spring.datasource.url}" userId="${spring.datasource.username}" password="${spring.datasource.password}"></jdbcConnection>
+
+        <!--数据库类型和java类型之间的转换控制,非必须-->
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!--生成的实体类所在的包，生成的实体类所在的硬盘位置 -->
+        <javaModelGenerator targetPackage="${mybatis.generator.entity.target.package}" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!--生成的mapper xml文件的包和位置-->
+        <sqlMapGenerator targetPackage="${mybatis.generator.xml.target.package}"  targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!--生成的mapper Java文件的包和位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="${mybatis.generator.mapper.target.package}"  targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+
+        <!--要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
+        <table schema="DB2ADMIN" tableName="${mybatis.generator.table.name}" mapperName="${mybatis.generator.mapper.name}" domainObjectName="${mybatis.generator.entity.name}" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true"/>
+            <generatedKey column="ID" sqlStatement="MySql" identity="true" />
+            <!--<columnOverride column="DATE_FIELD" property="startDate" />-->
+            <!--<ignoreColumn column="FRED" />-->
+            <!--<columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />-->
+        </table>
+
+    </context>
+</generatorConfiguration>
