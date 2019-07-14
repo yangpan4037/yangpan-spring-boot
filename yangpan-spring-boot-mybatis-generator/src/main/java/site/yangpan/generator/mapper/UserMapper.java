@@ -3,13 +3,13 @@ package site.yangpan.generator.mapper;
 import site.yangpan.generator.entity.UserEntity;
 
 public interface UserMapper {
-    int deleteByPrimaryKey(String user_id);
+    int deleteByPrimaryKey(String userId);
 
     int insert(UserEntity record);
 
     int insertSelective(UserEntity record);
 
-    UserEntity selectByPrimaryKey(String user_id);
+    UserEntity selectByPrimaryKey(String userId);
 
     int updateByPrimaryKeySelective(UserEntity record);
 

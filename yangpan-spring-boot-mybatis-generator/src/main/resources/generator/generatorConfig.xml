@@ -47,8 +47,9 @@
 
         <!--要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
         <table schema="DB2ADMIN" tableName="${mybatis.generator.table.name}" mapperName="${mybatis.generator.mapper.name}" domainObjectName="${mybatis.generator.entity.name}" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            <property name="useActualColumnNames" value="true"/>
-            <generatedKey column="ID" sqlStatement="MySql" identity="true" />
+            <!--下划线转驼峰-->
+            <property name="useActualColumnNames" value="false" />
+            <!--<generatedKey column="ID" sqlStatement="MySql" identity="true" />-->
             <!--<columnOverride column="DATE_FIELD" property="startDate" />-->
             <!--<ignoreColumn column="FRED" />-->
             <!--<columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />-->
