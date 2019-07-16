@@ -57,6 +57,8 @@
         <module>yangpan-spring-boot-mybatis-mapperhelper</module>
         <module>yangpan-spring-boot-redis</module>
         <module>yangpan-spring-boot-swagger2</module>
+        <module>yangpan-spring-boot-rabbitmq-producer</module>
+        <module>yangpan-spring-boot-rabbitmq-consumer</module>
     </modules>
 
 

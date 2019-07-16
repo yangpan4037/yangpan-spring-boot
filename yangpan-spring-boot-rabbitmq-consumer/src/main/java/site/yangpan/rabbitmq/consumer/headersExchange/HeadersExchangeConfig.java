@@ -51,7 +51,7 @@ public class HeadersExchangeConfig {
      * @return
      */
     @Bean
-    public Binding bindingCreditAExchange(Queue headersQueue, HeadersExchange headersExchange) {
+    public Binding bindingHeadesExchange(Queue headersQueue, HeadersExchange headersExchange) {
         Map<String,Object> headerValues = new HashMap<>();
         headerValues.put("name", "yangpan");
         return BindingBuilder.bind(headersQueue).to(headersExchange).whereAll(headerValues).match();

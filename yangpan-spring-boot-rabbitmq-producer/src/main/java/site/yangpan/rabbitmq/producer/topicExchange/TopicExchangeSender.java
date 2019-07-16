@@ -25,12 +25,12 @@ public class TopicExchangeSender {
     @Autowired
     private AmqpTemplate rabbitTemplate;
 
-    public void sendOne(String msg){
+    public void topicSendOne(String msg){
         System.out.println("生产者向队列”"+queue+".a“发送消息: "+msg);
         rabbitTemplate.convertAndSend(exchange, queue+".a", msg);
     }
 
-    public void sendTwo(String msg){
+    public void topicSendTwo(String msg){
         System.out.println("生产者向队列”"+queue+".a.b“发送消息: "+msg);
         rabbitTemplate.convertAndSend(exchange, queue+".a.b", msg);
     }

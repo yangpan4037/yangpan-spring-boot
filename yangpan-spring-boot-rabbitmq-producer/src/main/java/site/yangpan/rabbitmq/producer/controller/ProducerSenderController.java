@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import site.yangpan.rabbitmq.producer.directExchange.DirectExchangeSender;
+import site.yangpan.rabbitmq.producer.fanoutExchange.FanoutExchangeSender;
 import site.yangpan.rabbitmq.producer.headersExchange.HeadersExchangeSender;
 import site.yangpan.rabbitmq.producer.topicExchange.TopicExchangeSender;
 
@@ -26,22 +27,31 @@ public class ProducerSenderController {
     @Autowired
     private HeadersExchangeSender headersExchangeSender;
 
+    @Autowired
+    private FanoutExchangeSender fanoutExchangeSender;
+
     @GetMapping("/directExchangeSender/{message}")
     public String directExchangeSender(@PathVariable("message") String message){
-        directExchangeSender.send(message);
+        directExchangeSender.topicSend(message);
         return "发送成功！";
     }
 
     @GetMapping("/topicExchangeSender/{message}")
     public String topicExchangeSender(@PathVariable("message") String message){
-        topicExchangeSender.sendOne(message);
-        topicExchangeSender.sendTwo(message);
+        topicExchangeSender.topicSendOne(message);
+        topicExchangeSender.topicSendTwo(message);
         return "发送成功！";
     }
 
     @GetMapping("/headersExchangeSender/{message}")
     public String headersExchangeSender(@PathVariable("message") String message){
-        headersExchangeSender.send(message);
+        headersExchangeSender.headerSend(message);
+        return "发送成功！";
+    }
+
+    @GetMapping("/fanoutExchangeSender/{message}")
+    public String fanoutExchangeSender(@PathVariable("message") String message){
+        fanoutExchangeSender.fanoutSend(message);
         return "发送成功！";
     }
 }

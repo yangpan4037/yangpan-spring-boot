@@ -19,7 +19,7 @@ public class HeadersExchangeReceive {
 
     @RabbitHandler
     @RabbitListener(queues = "${yangpan.queue.three}")
-    public void creditBank(String msg) {
+    public void headersReceive(String msg) {
         System.out.println("消费者接收到队列“"+queue+"”的消息: "+msg);
     }
 }

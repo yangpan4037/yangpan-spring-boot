@@ -21,7 +21,7 @@ public class TopicExchangeReceive {
 
     @RabbitHandler
     @RabbitListener(queues = "${yangpan.queue.two}")
-    public void receive(String msg) {
+    public void topicReceive(String msg) {
         System.out.println("消费者接收到队列“"+queue+".#”的消息: "+msg);
     }
 }

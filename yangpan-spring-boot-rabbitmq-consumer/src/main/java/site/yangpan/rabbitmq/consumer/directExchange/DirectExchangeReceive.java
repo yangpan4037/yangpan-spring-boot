@@ -17,7 +17,7 @@ public class DirectExchangeReceive {
 
     @RabbitHandler
     @RabbitListener(queues = "${yangpan.queue.one}")
-    public void aaaa(String msg) {
+    public void directReceive(String msg) {
         System.out.println("消费者接收到队列“"+queue+"”的消息: "+msg);
     }
 }

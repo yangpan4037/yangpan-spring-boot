@@ -18,7 +18,7 @@ public class DirectExchangeSender {
     @Autowired
     private AmqpTemplate rabbitTemplate;
 
-    public void send(String msg){
+    public void topicSend(String msg){
         System.out.println("生产者向队列”"+queue+"“发送消息: "+msg);
         rabbitTemplate.convertAndSend(queue, msg);
     }

@@ -31,7 +31,7 @@ public class HeadersExchangeSender {
     @Autowired
     private AmqpTemplate rabbitTemplate;
 
-    public void send(String msg){
+    public void headerSend(String msg){
         System.out.println("生产者向队列”"+queue+"“发送消息: "+msg);
         Map<String,Object> head = new HashMap<>();
         head.put("name", "yangpan");
