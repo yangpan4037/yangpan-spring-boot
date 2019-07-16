@@ -1,0 +1,98 @@
+
+# RabbitMQ简介
+## 关于RabbitMQ
+rabbitmq是部署最广泛的开源消息代理。
+RabbitMQ在全球范围内在小型初创企业和大型企业部署了35000多个生产部署，是最受欢迎的开源消息代理。
+rabbitmq重量轻，易于在内部和云中部署。它支持多种消息协议。rabbitmq可以部署在分布式和集群配置中，以满足高规模、高可用性要求。
+rabbitmq运行在许多操作系统和云环境中，[适用于大多数流行语言的各种开发工具](https://www.rabbitmq.com/devtools.html)。
+
+## 名词解释
+|名词|解释|
+|-|-|
+|Broker|它提供一种传输服务,它的角色就是维护一条从生产者到消费者的路线，保证数据能按照指定的方式进行传输, |
+|Exchange|消息交换机,它指定消息按什么规则,路由到哪个队列。 |
+|Queue|消息的载体,每个消息都会被投到一个或多个队列。 |
+|Binding|绑定，它的作用就是把exchange和queue按照路由规则绑定起来. |
+|Routing Key|路由关键字,exchange根据这个关键字进行消息投递。 |
+|vhost|虚拟主机,一个broker里可以有多个vhost，用作不同用户的权限分离。 |
+|Producer|消息生产者,就是投递消息的程序. |
+|Consumer|消息消费者,就是接受消息的程序. |
+|Channel|消息通道,在客户端的每个连接里,可建立多个channel.|
+
+# 安装RabbitMQ
+## 下载服务
+|描述|下载|
+|-|-|
+|Windows系统安装程序 (from [Bintray](https://bintray.com/rabbitmq/all)) 	|[rabbitmq-server-3.7.16.exe](https://dl.bintray.com/rabbitmq/all/rabbitmq-server/3.7.16/rabbitmq-server-3.7.16.exe)|
+|Windows系统安装程序 (from [GitHub](https://github.com/rabbitmq/rabbitmq-server/releases))|[rabbitmq-server-3.7.16.exe](https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.7.16/rabbitmq-server-3.7.16.exe)|
+
+## 安装服务
+Windows安装rabbitmq需要安装一个[支持的Erlang版本](https://www.rabbitmq.com/which-erlang.html)，Erlang版本包括[Windows 安装程序](http://www.erlang.org/download.html)。[Erlang解决方案](https://www.erlang-solutions.com/resources/download.html)还提供了Erlang的64位二进制版本。
+
+## 运行RabbitMQ
+RabbitMQ服务会自动启动。您可以从开始菜单中停止/重新安装/启动RabbitMQ服务。
+
+## 端口访问
+防火墙和其他安全工具可以防止RabbitMQ绑定到端口。当这种情况发生时，RabbitMQ将无法启动。确保以下端口可以打开：
+
+4369：[epmd](http://erlang.org/doc/man/epmd.html)，RabbitMQ节点和CLI工具使用的对等发现服务
+5672，5671：AMQP 0-9-1和1.0客户端使用，不使用TLS
+25672：用于节点间和CLI工具通信（Erlang分发服务器端口），并从动态范围中分配（默认情况下仅限于单个端口，计算为AMQP端口+20000）。除非这些端口上的外部连接是真正必需的（例如，集群使用[集群](https://www.rabbitmq.com/federation.html)或CLI工具在子网外的机器上使用），否则这些端口不应该公开公开。有关详细信息，请参见[网络指南](https://www.rabbitmq.com/networking.html)。
+15672： [HTTP API](https://www.rabbitmq.com/management.html)客户端、[管理UI](https://www.rabbitmq.com/management.html)和[rabbitmqadmin](https://www.rabbitmq.com/management.html)（只有当启用了[管理插件](https://www.rabbitmq.com/management.html)时）
+61613，61614：外部[STOMP客户端](https://stomp.github.io/stomp-specification-1.2.html)和TLS（只有当[STOMP插件](https://www.rabbitmq.com/stomp.html)被启用时）
+1883，8883：外部[MQTT客户端](ttps://www.rabbitmq.com/web-stomp.html)和TLS（只有当[MQTT插件](https://www.rabbitmq.com/mqtt.html)被启用时）
+15674：STOMP-over-WebSockets客户端（只有当[Web STOMP插件](ttps://www.rabbitmq.com/web-stomp.html)被启用时）
+15675：MQTT-over-WebSockets客户端（只有当[Web MQTT插件](http://www.rabbitmq.com/web-mqtt.html)被启用时）
+
+可以[配置RabbitMQ](https://www.rabbitmq.com/configure.html)来使用不同的端口。
+
+## 默认用户访问
+broker 创建了一个应户名为guest密码为guest的用户。未配置的客户端通常会使用这些凭证。默认情况下，这些凭证只能在连接到经纪商作为localhost时使用，因此您需要在连接任何其他机器之前采取行动。
+
+## 管理broker
+要停止代理或检查其状态，请使用rabbitmqctl。在sbin（作为管理员）中的bat。
+
+停止broker
+```shell
+rabbitmqctl stop
+```
+
+检查broker状态
+```shell
+rabbitmqctl status
+```
+有关详细信息，请参阅[rabbitmq cli工具指南](https://www.rabbitmq.com/cli.html)和[rabbitmqctl说明页](https://www.rabbitmq.com/man/rabbitmqctl.8.html)。
+
+## 服务器日志
+服务器日志在故障排除和根本原因分析中至关重要。有关日志文件位置、日志旋转等信息，请参阅[日志](https://www.rabbitmq.com/logging.html)和[记录文件和目录位置](https://www.rabbitmq.com/relocate.html)指南。
+
+# 创建工程
+在yangpan-spring-boot项目下创建一个yangpan-spring-boot-rabbitmq模块。
+
+## 配置pom.xml
+```xml
+
+```
+
+## 配置application.properties
+```properties
+
+```
+
+## 启动类
+```java
+
+```
+
+
+https://www.cnblogs.com/skychenjiajun/p/9037324.html
+
+
+[RabbitMQ官方下载安装文档](https://www.rabbitmq.com/download.html)
+[RabbitMQ官方教程](https://www.rabbitmq.com/getstarted.html)
+[](https://www.erlang-solutions.com/resources/download.html)
+[Java的Spring AMQP项目](https://spring.io/projects/spring-amqp)
+[Spring Boot 官方文档](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-messaging.html#boot-features-amqp)
+
+
+
