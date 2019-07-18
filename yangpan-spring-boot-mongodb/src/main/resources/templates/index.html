@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+
+<h1>File server</h1>
+
+<div th:if="${message}">
+    <h2 th:text="${message}"/>
+</div>
+
+<div>
+    <form method="POST" enctype="multipart/form-data" action="/">
+        <table>
+            <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+            <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+        </table>
+    </form>
+</div>
+
+<div>    
+    <table border="1">
+    <thead>
+    <tr>
+        <td>fileName</td>
+        <td>fileId</td>
+        <td>contentType</td>
+        <td>size</td>
+        <td>uploadDate</td>
+        <td>md5</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${files.size()} eq 0">
+        <td colspan="6">没有文件信息！！</td>
+    </tr>
+    <tr th:each="fileEntity : ${files}">
+        <td><a th:href="'files/'+${fileEntity.fileId}" th:text="${fileEntity.fileName}" /></td>
+        <td th:text="${fileEntity.fileId}" ></td>
+        <td th:text="${fileEntity.contentType}" ></td>
+        <td th:text="${fileEntity.size}" ></td>
+        <td th:text="${fileEntity.uploadDate}" ></td>
+        <td th:text="${fileEntity.md5}" ></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+
+Powered by  <a href="https://yangpan.site">yangpan.site</a>
+</body>
+</html>
