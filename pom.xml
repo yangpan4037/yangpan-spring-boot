@@ -60,6 +60,7 @@
         <module>yangpan-spring-boot-rabbitmq-producer</module>
         <module>yangpan-spring-boot-rabbitmq-consumer</module>
         <module>yangpan-spring-boot-mongodb</module>
+        <module>yangpan-spring-boot-elasticsearch</module>
     </modules>
 
 
