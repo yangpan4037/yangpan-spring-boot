@@ -61,6 +61,7 @@
         <module>yangpan-spring-boot-rabbitmq-consumer</module>
         <module>yangpan-spring-boot-mongodb</module>
         <module>yangpan-spring-boot-elasticsearch</module>
+        <module>yangpan-spring-boot-apidoc</module>
     </modules>
 
 
