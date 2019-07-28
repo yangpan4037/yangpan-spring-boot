@@ -1,0 +1,53 @@
+= 用 Spring REST Docs 构建文档
+
+通过单元测试和一些简单的配置就能够得到api文档了.
+
+== User API
+
+=== 查询用户
+.curl-request
+include::{snippets}/user/get/curl-request.adoc[]
+
+.httpie-request
+include::{snippets}/user/get/httpie-request.adoc[]
+
+.http-request
+include::{snippets}/user/get/http-request.adoc[]
+
+.http-response
+include::{snippets}/user/get/http-response.adoc[]
+
+.path-parameters
+include::{snippets}/user/get/path-parameters.adoc[]
+
+.response-body
+include::{snippets}/user/get/response-body.adoc[]
+
+.response-fields
+include::{snippets}/user/get/response-fields.adoc[]
+
+
+=== 新增用户
+.curl-request
+include::{snippets}/user/insert/curl-request.adoc[]
+
+.httpie-request
+include::{snippets}/user/insert/httpie-request.adoc[]
+
+.http-request
+include::{snippets}/user/insert/http-request.adoc[]
+
+.http-response
+include::{snippets}/user/insert/http-response.adoc[]
+
+.request-body
+include::{snippets}/user/insert/request-body.adoc[]
+
+.request-fields
+include::{snippets}/user/insert/request-fields.adoc[]
+
+.response-body
+include::{snippets}/user/insert/response-body.adoc[]
+
+.response-fields
+include::{snippets}/user/insert/response-fields.adoc[]

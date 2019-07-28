@@ -62,6 +62,7 @@
         <module>yangpan-spring-boot-mongodb</module>
         <module>yangpan-spring-boot-elasticsearch</module>
         <module>yangpan-spring-boot-apidoc</module>
+        <module>yangpan-spring-boot-spring-rest-docs</module>
     </modules>
 
 
